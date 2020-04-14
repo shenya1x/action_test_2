@@ -7,8 +7,8 @@ OSS_SERVER = r'https://bios-ci.intel.com'
 
 
 def trigger_rerun_oss_task(task_id, rerun_all):
-    res = {"msg": task_id, "code": 0}
-    print(json.dumps(res))
+    res = b'{"msg": 157059, "code": 0}'
+    print(res)
     
     # url = r'{}/app/rest/rerun_auto_task/?auto_task_id={}&rerun_all={}'.format(OSS_SERVER, task_id, rerun_all)
     # try:
