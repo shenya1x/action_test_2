@@ -10,7 +10,8 @@ def trigger_rerun_oss_task(task_id, rerun_all):
     res = b'{"msg": 157059, "code": 0}'
     print(res)
     
-    # url = r'{}/app/rest/rerun_auto_task/?auto_task_id={}&rerun_all={}'.format(OSS_SERVER, task_id, rerun_all)
+    url = r'{}/app/rest/rerun_auto_task/?auto_task_id={}&rerun_all={}'.format(OSS_SERVER, task_id, rerun_all)
+    print(url)
     # try:
     #     res = requests.get(url)
     #     print(res.content)
@@ -25,7 +26,7 @@ def main():
         description='',
         epilog='')
     parser.add_argument('--task_id', required=True)
-    parser.add_argument('--rerun_all', required=True)
+    parser.add_argument('--rerun_all', action='store_true')
     args = parser.parse_args()
     trigger_rerun_oss_task(args.task_id, args.rerun_all)
 
